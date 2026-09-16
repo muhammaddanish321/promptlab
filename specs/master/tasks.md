@@ -85,57 +85,57 @@ Each phase is independently testable. Tasks marked `[P]` can run in parallel (di
 
 ### Model Subprocess Invocation
 
-- [ ] T017 Implement `promptlab/model.py` with `invoke_model(prompt_file, input_text, temp, seed, max_tokens) -> dict`:
+- [X] T017 Implement `promptlab/model.py` with `invoke_model(prompt_file, input_text, temp, seed, max_tokens) -> dict`:
   - Call subprocess: `python stubmodel.py --prompt <file> --input <text> --temperature <T> ...`
   - Parse JSON response
   - Return dict with output, tokens_in, tokens_out, finish, latency_ms
   - Handle errors: binary not found (exit 3), subprocess error (exit 3), invalid JSON response (exit 3)
-- [ ] T018 [P] Implement timeout handling for model subprocess (e.g., 30 seconds)
-- [ ] T019 [P] Create `tests/fixtures/fake_model.py` that implements the same CLI contract as stubmodel.py for testing (accepts --prompt, --input, --temperature, outputs JSON)
+- [X] T018 [P] Implement timeout handling for model subprocess (e.g., 30 seconds)
+- [X] T019 [P] Create `tests/fixtures/fake_model.py` that implements the same CLI contract as stubmodel.py for testing (accepts --prompt, --input, --temperature, outputs JSON)
 
 ### Assertion Implementation
 
-- [ ] T020 Implement `promptlab/assertions.py` with all 8 assertion types:
-  - [ ] T020a `contains(output, value, ignore_case=False) -> bool`
-  - [ ] T020b `not_contains(output, value, ignore_case=False) -> bool`
-  - [ ] T020c `equals(output, value, normalize=False) -> bool` (normalize = strip+collapse whitespace)
-  - [ ] T020d `matches(output, pattern) -> bool` (regex; invalid regex → return False, caller handles exit 1)
-  - [ ] T020e `json_valid(output) -> bool` (parse JSON; support fenced JSON extraction)
-  - [ ] T020f `json_field_equals(output, field, value) -> bool` (dotted path resolution; extract fenced JSON first)
-  - [ ] T020g `max_tokens(tokens_out, threshold) -> bool`
-  - [ ] T020h `finish_is(finish, expected) -> bool` (finish is one of stop, length, refusal)
-- [ ] T021 Implement fenced JSON extraction: `extract_fenced_json(output) -> str` using regex `^```(?:\w+)?\s*\n([\s\S]*?)\n```\s*$`
-- [ ] T022 [P] Implement dotted path resolution: `resolve_dotted_path(obj, path) -> any` for paths like `foo.bar.0.baz` (0-based indices only; no negatives)
-- [ ] T023 [P] Implement `evaluate_assertion(assertion_dict, output) -> bool` dispatcher that routes to the right assertion function
+- [X] T020 Implement `promptlab/assertions.py` with all 8 assertion types:
+  - [X] T020a `contains(output, value, ignore_case=False) -> bool`
+  - [X] T020b `not_contains(output, value, ignore_case=False) -> bool`
+  - [X] T020c `equals(output, value, normalize=False) -> bool` (normalize = strip+collapse whitespace)
+  - [X] T020d `matches(output, pattern) -> bool` (regex; invalid regex → return False, caller handles exit 1)
+  - [X] T020e `json_valid(output) -> bool` (parse JSON; support fenced JSON extraction)
+  - [X] T020f `json_field_equals(output, field, value) -> bool` (dotted path resolution; extract fenced JSON first)
+  - [X] T020g `max_tokens(tokens_out, threshold) -> bool`
+  - [X] T020h `finish_is(finish, expected) -> bool` (finish is one of stop, length, refusal)
+- [X] T021 Implement fenced JSON extraction: `extract_fenced_json(output) -> str` using regex `^```(?:\w+)?\s*\n([\s\S]*?)\n```\s*$`
+- [X] T022 [P] Implement dotted path resolution: `resolve_dotted_path(obj, path) -> any` for paths like `foo.bar.0.baz` (0-based indices only; no negatives)
+- [X] T023 [P] Implement `evaluate_assertion(assertion_dict, output) -> bool` dispatcher that routes to the right assertion function
 
 ### Case Execution & Flaky Classification
 
-- [ ] T024 Implement `promptlab/runner.py` with `run_suite(suite, runs) -> list[case_results]`:
+- [X] T024 Implement `promptlab/runner.py` with `run_suite(suite, runs) -> list[case_results]`:
   - For each case: run N times
   - For each run: call model, evaluate all assertions, record pass/fail per assertion
   - Compute pass_rate = passed_count / runs
   - Classify status: pass (1.0), fail (0.0), or flaky (0 < rate < 1.0)
   - Return list of results with pass_rate, status, per-assertion counts, failures
-- [ ] T025 [P] Implement `classify_status(pass_rate: float) -> str` (pass/fail/flaky logic)
-- [ ] T026 [P] Implement `run_case(case, prompt_file, runs) -> dict` that executes one case N times and tracks results
-- [ ] T027 [P] Implement failure tracking: `failures` array with run number, assertion, actual output (truncated to 500 chars)
+- [X] T025 [P] Implement `classify_status(pass_rate: float) -> str` (pass/fail/flaky logic)
+- [X] T026 [P] Implement `run_case(case, prompt_file, runs) -> dict` that executes one case N times and tracks results
+- [X] T027 [P] Implement failure tracking: `failures` array with run number, assertion, actual output (truncated to 500 chars)
 
 ### Report Generation
 
-- [ ] T028 Implement `promptlab/report.py` with `generate_report(suite, cases_results, runs, start_time, end_time) -> dict`:
+- [X] T028 Implement `promptlab/report.py` with `generate_report(suite, cases_results, runs, start_time, end_time) -> dict`:
   - Build report JSON matching schema exactly (suite, prompt_file, prompt_hash, runs, model, totals, cases)
   - Compute prompt_hash: first 12 hex chars of SHA-256(prompt_bytes)
   - Totals: count cases, passed, failed, flaky; sum tokens_in, tokens_out; wall_ms = elapsed time
   - Per-case: id, status, pass_rate, tokens_out_avg, assertions (per-assertion counts), failures
   - **Determinism**: Use json.dumps with sort_keys=True
   - **Byte-identical at temp 0.0**: No floating-point rounding, consistent formatting
-- [ ] T029 [P] Implement `compute_tokens(text: str) -> int` using `math.ceil(len(text) / 4)` (used for reporting; also in model response)
-- [ ] T030 [P] Implement `compute_prompt_hash(prompt_bytes) -> str` (SHA-256, first 12 hex chars)
-- [ ] T031 Implement human-readable report output: `print_human_summary(report, file=stderr)` for --report flag (X passed, Y failed, Z flaky; tokens in/out; wall time)
+- [X] T029 [P] Implement `compute_tokens(text: str) -> int` using `math.ceil(len(text) / 4)` (used for reporting; also in model response)
+- [X] T030 [P] Implement `compute_prompt_hash(prompt_bytes) -> str` (SHA-256, first 12 hex chars)
+- [X] T031 Implement human-readable report output: `print_human_summary(report, file=stderr)` for --report flag (X passed, Y failed, Z flaky; tokens in/out; wall time)
 
 ### Unit Tests for Phase 2
 
-- [ ] T032 Create `tests/test_assertions.py` with unit tests for all 8 assertion types:
+- [X] T032 Create `tests/test_assertions.py` with unit tests for all 8 assertion types:
   - `contains`: exact match, case-insensitive, substring
   - `not_contains`: string absence
   - `equals`: exact equality, normalized equality
@@ -144,32 +144,32 @@ Each phase is independently testable. Tasks marked `[P]` can run in parallel (di
   - `json_field_equals`: nested paths, array indices, missing field, type strictness
   - `max_tokens`: threshold comparisons
   - `finish_is`: all three finish types
-- [ ] T033 Create `tests/test_runner.py` with unit tests for:
+- [X] T033 Create `tests/test_runner.py` with unit tests for:
   - Case execution (N runs, pass/fail per assertion)
   - Flaky classification (1.0 pass, 0.0 fail, 0.7 flaky)
   - Failure tracking (correct run number, assertion, output)
-- [ ] T034 Create `tests/test_report.py` with unit tests for:
+- [X] T034 Create `tests/test_report.py` with unit tests for:
   - Report schema compliance (all required fields)
   - Totals calculation (passed + failed + flaky = cases)
   - Pass rate calculation (passed / runs)
   - Token calculations (ceil(len/4))
   - Prompt hash (SHA-256, first 12 chars)
   - Determinism (byte-identical repeated runs at temp 0.0)
-- [ ] T035 [P] Create `tests/test_model.py` with unit tests for:
+- [X] T035 [P] Create `tests/test_model.py` with unit tests for:
   - Subprocess invocation (call with correct args)
   - JSON response parsing
   - Error handling (binary not found, subprocess error, invalid JSON)
 
 ### Phase 2 Completion
 
-- [ ] T036 Run `python -m promptlab run --suite suites/smoke.json --out report.json --report` and verify:
+- [X] T036 Run `python -m promptlab run --suite suites/smoke.json --out report.json --report` and verify:
   - Report JSON written to file
   - Human summary printed to stderr
   - Exit code 0 (all passed)
-- [ ] T037 Run `python -m promptlab run --suite suites/smoke.json --runs 10` and verify pass_rate and flaky classification
-- [ ] T038 Run same suite twice at --temperature 0.0 and diff reports (should be identical except wall_ms)
-- [ ] T039 Run `python -m unittest tests.test_assertions tests.test_runner tests.test_report tests.test_model` and verify all pass
-- [ ] T040 Code review: Verify code is simple, readable, no premature abstractions
+- [X] T037 Run `python -m promptlab run --suite suites/smoke.json --runs 10` and verify pass_rate and flaky classification
+- [X] T038 Run same suite twice at --temperature 0.0 and diff reports (should be identical except wall_ms)
+- [X] T039 Run `python -m unittest tests.test_assertions tests.test_runner tests.test_report tests.test_model` and verify all pass
+- [X] T040 Code review: Verify code is simple, readable, no premature abstractions
 
 **Depends on**: Phase 1 (cli.py, suite loading)
 
@@ -189,36 +189,36 @@ Each phase is independently testable. Tasks marked `[P]` can run in parallel (di
 
 ### Comparison Logic
 
-- [ ] T041 Implement `promptlab/compare.py` with `compare_reports(baseline, candidate) -> dict`:
+- [X] T041 Implement `promptlab/compare.py` with `compare_reports(baseline, candidate) -> dict`:
   - For each case: classify as regressed, improved, unchanged, new, or removed
   - Regression: any drop in pass_rate (candidate < baseline)
   - Compute cost delta: tokens_in_delta, tokens_in_pct, tokens_out_delta, tokens_out_pct
   - Emit warnings: same prompt_hash, different suites, different model settings
   - Return diff JSON matching schema (baseline_suite, candidate_suite, cases, cost_delta, warnings)
-- [ ] T042 [P] Implement `classify_case(baseline_rate, candidate_rate) -> str` (regressed/improved/unchanged)
-- [ ] T043 [P] Implement `compute_cost_delta(baseline_totals, candidate_totals) -> dict` (deltas and percentages)
-- [ ] T044 [P] Implement `emit_warnings(baseline, candidate) -> list[str]` (check for incomparability)
+- [X] T042 [P] Implement `classify_case(baseline_rate, candidate_rate) -> str` (regressed/improved/unchanged)
+- [X] T043 [P] Implement `compute_cost_delta(baseline_totals, candidate_totals) -> dict` (deltas and percentages)
+- [X] T044 [P] Implement `emit_warnings(baseline, candidate) -> list[str]` (check for incomparability)
 
 ### Doctor Command
 
-- [ ] T045 Implement `promptlab/doctor.py` with `run_doctor() -> int` that checks:
+- [X] T045 Implement `promptlab/doctor.py` with `run_doctor() -> int` that checks:
   - ✅ Python version: 3.10+ (print "✓ Python version: X.Y OK" or "✗ Python version: X.Y (need 3.10+)")
   - ✅ Model binary: reachable and responds to --help (try `python stubmodel.py --help` with timeout)
   - ✅ Suites directory: exists and contains .json files (count them)
   - ✅ Assertion types: all 8 registered (import from assertions.py, check set)
   - Exit code 0 if all pass, 1 if any fail; continue all checks even if one fails
-- [ ] T046 [P] Implement human-readable output for each check (✓/✗ symbols, counts, paths)
-- [ ] T047 [P] Implement error messages with suggestions (e.g., "Model binary not found → Try: python stubmodel.py --help")
+- [X] T046 [P] Implement human-readable output for each check (✓/✗ symbols, counts, paths)
+- [X] T047 [P] Implement error messages with suggestions (e.g., "Model binary not found → Try: python stubmodel.py --help")
 
 ### Unit Tests for Phase 3
 
-- [ ] T048 Create `tests/test_compare.py` with unit tests for:
+- [X] T048 Create `tests/test_compare.py` with unit tests for:
   - Case classification (regressed, improved, unchanged, new, removed)
   - Regression detection (1.0 → 0.9 is regressed, 1.0 → 0.99 is regressed, 0.5 → 0.5 is unchanged)
   - Cost delta calculation (deltas, percentages, zero division)
   - Warnings (same hash, different suites, different model settings)
   - Empty diffs (no cases in common)
-- [ ] T049 Create `tests/test_doctor.py` with unit tests for:
+- [X] T049 Create `tests/test_doctor.py` with unit tests for:
   - Python version check
   - Model binary check (mock subprocess call)
   - Suites directory check
@@ -226,12 +226,12 @@ Each phase is independently testable. Tasks marked `[P]` can run in parallel (di
 
 ### Phase 3 Completion
 
-- [ ] T050 Generate two reports: baseline.json and candidate.json from two runs
-- [ ] T051 Run `python -m promptlab compare --baseline baseline.json --candidate candidate.json --out diff.json` and verify diff JSON written
-- [ ] T052 Verify regressions are flagged correctly (even small drops)
-- [ ] T053 Verify cost delta is computed and formatted correctly
-- [ ] T054 Run `python -m promptlab doctor` and verify output format and exit code
-- [ ] T055 Run `python -m unittest tests.test_compare tests.test_doctor` and verify all pass
+- [X] T050 Generate two reports: baseline.json and candidate.json from two runs
+- [X] T051 Run `python -m promptlab compare --baseline baseline.json --candidate candidate.json --out diff.json` and verify diff JSON written
+- [X] T052 Verify regressions are flagged correctly (even small drops)
+- [X] T053 Verify cost delta is computed and formatted correctly
+- [X] T054 Run `python -m promptlab doctor` and verify output format and exit code
+- [X] T055 Run `python -m unittest tests.test_compare tests.test_doctor` and verify all pass
 
 **Depends on**: Phase 2 (run command, report generation)
 

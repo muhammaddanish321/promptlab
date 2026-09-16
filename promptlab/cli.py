@@ -92,10 +92,62 @@ def run_command(args):
 def compare_command(args):
     """Handler for 'compare' command."""
     try:
-        # TODO: Implement comparison (Phase 3)
-        print("Compare command not yet implemented", file=sys.stderr)
-        return 1
+        from . import compare
+        import json
 
+        # Validate arguments
+        if not args.baseline:
+            print("compare: --baseline is required", file=sys.stderr)
+            return 1
+        if not args.candidate:
+            print("compare: --candidate is required", file=sys.stderr)
+            return 1
+
+        # Load reports
+        try:
+            with open(args.baseline, 'r') as f:
+                baseline_data = json.load(f)
+        except FileNotFoundError:
+            print("report: cannot read file", file=sys.stderr)
+            return 4
+        except json.JSONDecodeError as e:
+            print(f"report: JSON parse error: {str(e)}", file=sys.stderr)
+            return 1
+
+        try:
+            with open(args.candidate, 'r') as f:
+                candidate_data = json.load(f)
+        except FileNotFoundError:
+            print("report: cannot read file", file=sys.stderr)
+            return 4
+        except json.JSONDecodeError as e:
+            print(f"report: JSON parse error: {str(e)}", file=sys.stderr)
+            return 1
+
+        # Validate report schema
+        for report, name in [(baseline_data, "baseline"), (candidate_data, "candidate")]:
+            if "totals" not in report:
+                print(f"report: schema violation: missing field 'totals' in {name}", file=sys.stderr)
+                return 1
+            if "cases" not in report:
+                print(f"report: schema violation: missing field 'cases' in {name}", file=sys.stderr)
+                return 1
+
+        # Compare reports
+        diff_data = compare.compare_reports(baseline_data, candidate_data)
+
+        # Output diff
+        if args.out:
+            with open(args.out, 'w') as f:
+                json.dump(diff_data, f, indent=2, sort_keys=True)
+        else:
+            print(json.dumps(diff_data, indent=2, sort_keys=True))
+
+        return 0
+
+    except FileNotFoundError as e:
+        print(f"report: cannot read file", file=sys.stderr)
+        return 4
     except Exception as e:
         print(f"Error: {str(e)}", file=sys.stderr)
         return 1
@@ -104,9 +156,8 @@ def compare_command(args):
 def doctor_command(args):
     """Handler for 'doctor' command."""
     try:
-        # TODO: Implement diagnostics (Phase 3)
-        print("Doctor command not yet implemented", file=sys.stderr)
-        return 1
+        from . import doctor
+        return doctor.run_doctor()
 
     except Exception as e:
         print(f"Error: {str(e)}", file=sys.stderr)
