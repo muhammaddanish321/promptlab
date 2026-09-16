@@ -1,0 +1,18 @@
+Your task is to classify a customer support ticket by analyzing its content.
+
+You must classify the ticket into ONE of these categories:
+- billing: issues related to payments, invoices, refunds, charges, subscriptions
+- account: issues related to account access, passwords, logins, user profiles
+- technical: issues related to bugs, errors, crashes, performance, API problems
+- other: issues that don't fit the above categories
+
+Read the ticket text carefully. Look for keywords and context clues to determine the most appropriate category.
+
+Ticket: {input}
+
+Respond with a JSON object containing the category field:
+```json
+{"category": "<billing|account|technical|other>"}
+```
+
+Output ONLY the JSON object, nothing else.

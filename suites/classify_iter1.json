@@ -1,0 +1,893 @@
+{
+  "name": "classify",
+  "prompt_file": "../prompts/classify_v1_iter1.txt",
+  "model": {
+    "temperature": 0.0,
+    "max_tokens": 256
+  },
+  "runs": 1,
+  "cases": [
+    {
+      "id": "t001",
+      "input": "I was charged twice for invoice 7392. Please refund the duplicate charge.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t002",
+      "input": "I can't log in to my account. The password reset link is not working.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t003",
+      "input": "The API is returning 500 errors when I try to fetch user data.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t004",
+      "input": "I need to update my billing address on file.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t005",
+      "input": "The app crashes every time I try to upload a file.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t006",
+      "input": "My account was locked. How do I unlock it?",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t007",
+      "input": "I want to change my subscription plan to the Pro tier.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t008",
+      "input": "The dashboard is loading very slowly. It takes 30 seconds to load.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t009",
+      "input": "Please send me a receipt for my last payment.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t010",
+      "input": "I forgot my username. Can you help me recover it?",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t011",
+      "input": "The search feature returns no results even for existing records.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t012",
+      "input": "I was overcharged this month. My bill should be $99 but I was billed $150.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t013",
+      "input": "I want to enable two-factor authentication on my account.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t014",
+      "input": "The export to CSV feature is not working. It says 'export failed'.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t015",
+      "input": "Can I get an invoice for last quarter?",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t016",
+      "input": "I changed my email but the system still sends notifications to the old one.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t017",
+      "input": "The mobile app keeps disconnecting from the server.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t018",
+      "input": "I need to cancel my subscription. What is the cancellation process?",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t019",
+      "input": "How do I delete my account?",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t020",
+      "input": "The notification system is sending duplicate alerts.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t021",
+      "input": "I was billed for a service I didn't use. Please investigate.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t022",
+      "input": "I want to add another user to my team account.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t023",
+      "input": "The API documentation is out of date and doesn't match the current version.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t024",
+      "input": "Can I get a refund for last month?",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t025",
+      "input": "I can't change my password. The form gives an error.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t026",
+      "input": "The report generator is timing out on large datasets.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t027",
+      "input": "I was charged an unexpected renewal fee. Please reverse it.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t028",
+      "input": "I need to update my company name in the account profile.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t029",
+      "input": "The database connection fails intermittently, causing service interruptions.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t030",
+      "input": "Can I get a discount on my next bill?",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t031",
+      "input": "The account recovery email was not received.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t032",
+      "input": "The webhook integration is not firing events correctly.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t033",
+      "input": "I need a tax ID receipt for my purchase.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t034",
+      "input": "I want to change the primary contact email for my account.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t035",
+      "input": "The search performance degrades with large result sets.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t036",
+      "input": "I was charged after I requested a cancellation.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t037",
+      "input": "I can't access my account from a new device.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t038",
+      "input": "The file upload size limit is too low. Can it be increased?",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t039",
+      "input": "Can I pay by invoice instead of credit card?",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t040",
+      "input": "I need to deactivate my account temporarily.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t041",
+      "input": "The rate limiting is too aggressive. We're hitting limits on normal usage.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t042",
+      "input": "I received a late payment fee but I paid on time. Please remove it.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t043",
+      "input": "How do I update my billing address?",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t044",
+      "input": "The session expires too quickly. Users get logged out after 5 minutes.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t045",
+      "input": "I want to add a promo code to my account.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t046",
+      "input": "The login page is not loading. I see a blank screen.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t047",
+      "input": "The backend service is returning malformed JSON responses.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t048",
+      "input": "I need to verify my payment method.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t049",
+      "input": "Can I change my username?",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t050",
+      "input": "The cache invalidation is not working. Users see stale data.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t051",
+      "input": "I want to request an invoice in a different format.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t052",
+      "input": "I lost access to my email and can't reset my password.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t053",
+      "input": "The SSL certificate validation is failing on the client.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t054",
+      "input": "Can I get a detailed breakdown of my charges?",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t055",
+      "input": "The two-factor authentication code is not being generated.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t056",
+      "input": "The concurrent user limit is preventing legitimate users from logging in.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t057",
+      "input": "I need to update my payment method on file.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t058",
+      "input": "My account was hacked. I need to secure it.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t059",
+      "input": "The log file rotation is not working. Disk space is filling up.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t060",
+      "input": "I was charged twice in one day.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    },
+    {
+      "id": "t061",
+      "input": "I can't download my transaction history.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "account"
+        }
+      ]
+    },
+    {
+      "id": "t062",
+      "input": "The memory usage is growing unbounded. The service crashes after a few hours.",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "technical"
+        }
+      ]
+    },
+    {
+      "id": "t063",
+      "input": "Can I get an itemized receipt?",
+      "assert": [
+        {
+          "type": "json_valid"
+        },
+        {
+          "type": "json_field_equals",
+          "field": "category",
+          "value": "billing"
+        }
+      ]
+    }
+  ]
+}

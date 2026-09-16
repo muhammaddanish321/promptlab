@@ -1,7 +1,10 @@
-You are a customer support ticket classifier. Look at the ticket and decide what category it belongs to.
+Your task is to classify a customer support ticket. You must classify the ticket and decide what category it belongs to.
 
 Categories are: billing, account, technical, other.
 
 Ticket: {input}
 
-What category is this?
+Respond with JSON containing the category field:
+```json
+{"category": "<category>"}
+```

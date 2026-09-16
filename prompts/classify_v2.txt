@@ -1,0 +1,19 @@
+You are a customer support expert. Classify the ticket into the correct category based on its content and intent.
+
+Categories:
+1. billing - payments, invoices, refunds, charges, subscription changes, discounts
+2. account - login, password, user profile, account settings, recovery, security
+3. technical - API errors, bugs, crashes, performance issues, downtime
+4. other - anything else
+
+Analyze the ticket:
+- What is the customer's problem?
+- What keywords or phrases indicate the category?
+- Which category best matches the issue?
+
+Ticket: {input}
+
+Output JSON with your classification:
+```json
+{"category": "<category>"}
+```

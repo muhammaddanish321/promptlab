@@ -251,38 +251,38 @@ Each phase is independently testable. Tasks marked `[P]` can run in parallel (di
 
 ### Baseline Evaluation
 
-- [ ] T056 Create `suites/classify.json` from `data/tickets.json`:
+- [X] T056 Create `suites/classify.json` from `data/tickets.json`:
   - 63 cases (one per ticket)
   - Each case: id, input (ticket text), assertions (json_valid + json_field_equals for category label)
   - Model: temperature 0.0, max_tokens 256
   - Runs: 1 (for baseline suite file; will override with --runs 10 on CLI)
-- [ ] T057 Run `python -m promptlab run --suite suites/classify.json --runs 10 --out baseline.json --report` and save output
-- [ ] T058 Document baseline results in IMPROVEMENT.md: baseline.json output, pass/fail/flaky counts, tokens, initial observations
+- [X] T057 Run `python -m promptlab run --suite suites/classify.json --runs 10 --out baseline.json --report` and save output
+- [X] T058 Document baseline results in IMPROVEMENT.md: baseline.json output, pass/fail/flaky counts, tokens, initial observations
 
 ### Prompt Improvement (4+ iterations)
 
-- [ ] T059 **Iteration 1**: Improve `prompts/classify_v1.txt` → create `prompts/classify_v1_iter1.txt` (e.g., add more detailed instructions)
-- [ ] T060 [P] Run `python -m promptlab run --suite suites/classify.json --runs 10 --out candidate_iter1.json` and compare
-- [ ] T061 [P] Analyze diff: document what changed, what was predicted, what actually happened
-- [ ] T062 **Iteration 2**: Apply second change (e.g., better formatting, examples)
-- [ ] T063 [P] Run candidate suite and compare; document prediction vs. actual
-- [ ] T064 **Iteration 3**: Apply third change
-- [ ] T065 [P] Run and compare; document
-- [ ] T066 **Iteration 4 (No-Op)**: Try a change that doesn't help (intentional regression test)
-- [ ] T067 [P] Run and compare; document that it didn't help (important for honesty)
-- [ ] T068 **Final**: Create `prompts/classify_v2.txt` (best version from iterations)
-- [ ] T069 Run final candidate: `python -m promptlab run --suite suites/classify.json --runs 10 --out candidate_final.json`
-- [ ] T070 Verify v2 measurably outperforms v1 (higher pass rate or lower flaky count)
+- [X] T059 **Iteration 1**: Improve `prompts/classify_v1.txt` → create `prompts/classify_v1_iter1.txt` (e.g., add more detailed instructions)
+- [X] T060 [P] Run `python -m promptlab run --suite suites/classify.json --runs 10 --out candidate_iter1.json` and compare
+- [X] T061 [P] Analyze diff: document what changed, what was predicted, what actually happened
+- [X] T062 **Iteration 2**: Apply second change (e.g., better formatting, examples)
+- [X] T063 [P] Run candidate suite and compare; document prediction vs. actual
+- [X] T064 **Iteration 3**: Apply third change
+- [X] T065 [P] Run and compare; document
+- [X] T066 **Iteration 4 (No-Op)**: Try a change that doesn't help (intentional regression test)
+- [X] T067 [P] Run and compare; document that it didn't help (important for honesty)
+- [X] T068 **Final**: Create `prompts/classify_v2.txt` (best version from iterations)
+- [X] T069 Run final candidate: `python -m promptlab run --suite suites/classify.json --runs 10 --out candidate_final.json`
+- [X] T070 Verify v2 measurably outperforms v1 (higher pass rate or lower flaky count)
 
 ### Phase 4 Completion
 
-- [ ] T071 Document full iteration history in IMPROVEMENT.md:
+- [X] T071 Document full iteration history in IMPROVEMENT.md:
   - Baseline report output
   - Final candidate report output
   - Final diff output
   - 4+ iteration entries: (Iteration N: Prediction → Actual Result)
   - Include one non-helping iteration
-- [ ] T072 Verify IMPROVEMENT.md shows learning process (not just polished end result)
+- [X] T072 Verify IMPROVEMENT.md shows learning process (not just polished end result)
 
 **Depends on**: Phase 3 (compare command) and Phase 2 (run command)
 

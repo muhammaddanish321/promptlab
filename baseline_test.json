@@ -1,0 +1,2247 @@
+{
+  "cases": [
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [],
+      "id": "t001",
+      "pass_rate": 1.0,
+      "status": "pass",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t002",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t003",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t004",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [],
+      "id": "t005",
+      "pass_rate": 1.0,
+      "status": "pass",
+      "tokens_out_avg": 12.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t006",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t007",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t008",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t009",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 12.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t010",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 12.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t011",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t012",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t013",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t014",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [],
+      "id": "t015",
+      "pass_rate": 1.0,
+      "status": "pass",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t016",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [],
+      "id": "t017",
+      "pass_rate": 1.0,
+      "status": "pass",
+      "tokens_out_avg": 12.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t018",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 12.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t019",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t020",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t021",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t022",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t023",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t024",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t025",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t026",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t027",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 12.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t028",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 12.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t029",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t030",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t031",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t032",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t033",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 12.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t034",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 12.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t035",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t036",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t037",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 12.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t038",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"account\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t039",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t040",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t041",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [],
+      "id": "t042",
+      "pass_rate": 1.0,
+      "status": "pass",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [],
+      "id": "t043",
+      "pass_rate": 1.0,
+      "status": "pass",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [],
+      "id": "t044",
+      "pass_rate": 1.0,
+      "status": "pass",
+      "tokens_out_avg": 12.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t045",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [],
+      "id": "t046",
+      "pass_rate": 1.0,
+      "status": "pass",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t047",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [],
+      "id": "t048",
+      "pass_rate": 1.0,
+      "status": "pass",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [],
+      "id": "t049",
+      "pass_rate": 1.0,
+      "status": "pass",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t050",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t051",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t052",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [],
+      "id": "t053",
+      "pass_rate": 1.0,
+      "status": "pass",
+      "tokens_out_avg": 12.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [],
+      "id": "t054",
+      "pass_rate": 1.0,
+      "status": "pass",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t055",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"billing\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t056",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t057",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 12.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t058",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 12.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "technical"
+          },
+          "output_truncated": "{\"category\": \"other\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t059",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [],
+      "id": "t060",
+      "pass_rate": 1.0,
+      "status": "pass",
+      "tokens_out_avg": 11.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "account"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t061",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 12.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [],
+      "id": "t062",
+      "pass_rate": 1.0,
+      "status": "pass",
+      "tokens_out_avg": 12.0
+    },
+    {
+      "assertions": [
+        {
+          "failed": 0,
+          "passed": 2,
+          "type": "json_valid"
+        },
+        {
+          "failed": 2,
+          "passed": 0,
+          "type": "json_field_equals"
+        }
+      ],
+      "failures": [
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 0
+        },
+        {
+          "actual": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "assertion": {
+            "field": "category",
+            "type": "json_field_equals",
+            "value": "billing"
+          },
+          "output_truncated": "{\"category\": \"technical\", \"confidence\": 0.95}",
+          "run": 1
+        }
+      ],
+      "id": "t063",
+      "pass_rate": 0.0,
+      "status": "fail",
+      "tokens_out_avg": 12.0
+    }
+  ],
+  "model": {
+    "max_tokens": 256,
+    "temperature": 0.0
+  },
+  "prompt_file": "D:\\aicode\\promptlab\\suites\\../prompts/classify_v1.txt",
+  "prompt_hash": "594e46008aec",
+  "runs": 2,
+  "suite": "classify",
+  "totals": {
+    "cases": 63,
+    "failed": 49,
+    "flaky": 0,
+    "passed": 14,
+    "tokens_in": 8820,
+    "tokens_out": 1420,
+    "wall_ms": 24119
+  }
+}
