@@ -300,27 +300,27 @@ Each phase is independently testable. Tasks marked `[P]` can run in parallel (di
 
 ### Documentation
 
-- [ ] T073 Write `USAGE.md` — Agent-facing documentation:
+- [X] T073 Write `USAGE.md` — Agent-facing documentation:
   - What each command does (run, compare, doctor)
   - When to use it (run = test suite, compare = measure improvement)
   - When not to (compare different test sets)
   - Exit codes and what agent should do for each (0 = success, 1 = bad input, 2 = cases failed, 3 = model error, 4 = file error)
   - Example workflow: run baseline, run candidate, compare
   - Error messages and recovery steps
-- [ ] T074 Write `PROMPTS.md` — Five most important prompts from history/prompts/master/:
+- [X] T074 Write `PROMPTS.md` — Five most important prompts from history/prompts/master/:
   - For each: "What we asked" → "What came back" → "What we changed" → "Why"
   - Focus on prompts that shaped major decisions (flaky policy, fenced JSON, regression detection, etc.)
-- [ ] T075 [P] Write `README.md` — User-facing guide:
+- [X] T075 [P] Write `README.md` — User-facing guide:
   - Quick start (python -m promptlab doctor)
   - CLI reference (run, compare, doctor with examples)
   - Understanding results (pass/fail/flaky explanation)
   - Suite format (example)
   - Assertion types (table)
-- [ ] T076 [P] Update existing README_TEMPLATE.md to match final implementation
+- [X] T076 [P] Update existing README_TEMPLATE.md to match final implementation
 
 ### Post-Hackathon Reflection
 
-- [ ] T077 Write `JOURNAL.md` — One page, answers 5 questions:
+- [X] T077 Write `JOURNAL.md` — One page, answers 5 questions:
   - **Q1**: Three decisions we made + what we rejected
     - E.g., "Flaky = 0 < rate < 1.0 (rejected threshold-based)"
   - **Q2**: Hardest bug + how we found root cause
@@ -330,9 +330,9 @@ Each phase is independently testable. Tasks marked `[P]` can run in parallel (di
 
 ### Phase 5 Completion
 
-- [ ] T078 Verify USAGE.md is agent-readable (clear exit codes, recovery steps)
-- [ ] T079 Verify PROMPTS.md has exactly 5 entries with all 4 fields
-- [ ] T080 Verify JOURNAL.md answers all 5 questions, fits one page
+- [X] T078 Verify USAGE.md is agent-readable (clear exit codes, recovery steps)
+- [X] T079 Verify PROMPTS.md has exactly 5 entries with all 4 fields
+- [X] T080 Verify JOURNAL.md answers all 5 questions, fits one page
 
 **Depends on**: All previous phases (evidence of implementation + improvement)
 
