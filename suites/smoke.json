@@ -1,0 +1,43 @@
+{
+  "name": "classify-smoke",
+  "prompt_file": "prompts/classify_v1.txt",
+  "model": {
+    "temperature": 0.0,
+    "max_tokens": 256
+  },
+  "runs": 1,
+  "cases": [
+    {
+      "id": "c001",
+      "input": "I was charged twice for invoice 7392. Please refund the duplicate charge.",
+      "assert": [
+        {"type": "json_valid"},
+        {"type": "json_field_equals", "field": "category", "value": "billing"}
+      ]
+    },
+    {
+      "id": "c002",
+      "input": "I can't log in to my account. The password reset link is not working.",
+      "assert": [
+        {"type": "json_valid"},
+        {"type": "json_field_equals", "field": "category", "value": "account"}
+      ]
+    },
+    {
+      "id": "c003",
+      "input": "The API is returning 500 errors when I try to fetch user data.",
+      "assert": [
+        {"type": "json_valid"},
+        {"type": "json_field_equals", "field": "category", "value": "technical"}
+      ]
+    },
+    {
+      "id": "c004",
+      "input": "Can you help me with my general question?",
+      "assert": [
+        {"type": "json_valid"},
+        {"type": "json_field_equals", "field": "category", "value": "other"}
+      ]
+    }
+  ]
+}

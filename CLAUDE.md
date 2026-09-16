@@ -196,6 +196,118 @@ If ALL true, suggest:
 
 Wait for consent; never auto-create ADRs. Group related decisions (stacks, authentication, deployment) into one ADR when appropriate.
 
+## promptlab Project Rules
+
+**Project**: Command-line test runner for prompts. See `.specify/memory/constitution.md` for core principles.
+
+### Core Requirements (MUST Implement)
+
+- **Python 3.10+, stdlib only**: No third-party packages (no pytest, yaml, rich), no network.
+- **Model as subprocess**: Call `python stubmodel.py --prompt <file> --input <text|@file> [--temperature T] [--seed N] [--max-tokens M] [--call-index N]`. Never import or reimplement.
+- **Exit codes**: 0 = all pass, 1 = bad usage/malformed suite, 2 = cases failed, 3 = model not invokable, 4 = file unreadable.
+- **Non-determinism is the core problem**: Distinguish three outcomes: pass (all runs), fail (all runs), flaky (mixed). Never collapse flaky into pass.
+- **Token rule everywhere**: `tokens = math.ceil(len(text) / 4)`. Applied in all reports.
+- **Byte-identical determinism**: At temperature 0.0, same suite twice = byte-identical reports (apart from timing fields).
+- **Paths are suite-relative**: In suite input, file paths are relative to the suite file, not the working directory.
+
+### CLI Contract (Exact Signatures)
+
+```
+promptlab run --suite <file> [--runs N] [--out report.json] [--report]
+promptlab compare --baseline <report.json> --candidate <report.json> [--out diff.json]
+promptlab doctor
+```
+
+### The Eight Assertion Types (All Mandatory)
+
+1. **contains**: output contains value (optional ignore_case)
+2. **not_contains**: output does not contain value (optional ignore_case)
+3. **equals**: output equals value (optional normalize for whitespace)
+4. **matches**: regex pattern finds a match
+5. **json_valid**: output parses as JSON [NEEDS DECISION: fenced JSON?]
+6. **json_field_equals**: dotted path resolves to value
+7. **max_tokens**: tokens_out ≤ value
+8. **finish_is**: finish equals "stop", "length", or "refusal"
+
+### Suite Format (Fixed, You Consume It)
+
+```json
+{
+  "name": "suite-name",
+  "prompt_file": "relative/path.txt",
+  "model": { "temperature": 0.0, "max_tokens": 256 },
+  "runs": 1,
+  "cases": [
+    {
+      "id": "c001",
+      "input": "text" | {"file": "relative/path"},
+      "assert": [{ "type": "contains", "value": "..." }, ...]
+    }
+  ]
+}
+```
+
+### Report Schema (Fixed, Judges Diff It)
+
+Key fields required:
+- `suite` (string): suite name
+- `prompt_file` (string): path
+- `prompt_hash` (string): first 12 hex chars of SHA-256(prompt bytes)
+- `runs` (int): number of runs
+- `model` (object): {temperature, max_tokens}
+- `totals` (object): {cases, passed, failed, flaky, tokens_in, tokens_out, wall_ms}
+- `cases` (array): [{id, status, pass_rate, tokens_out_avg, assertions: [{type, passed, failed}], failures: []}]
+
+Status: "pass", "fail", or "flaky" [NEEDS DECISION: flaky threshold?]
+
+### Compare Output (Fixed)
+
+For each case: status classification (regressed, improved, unchanged, new, removed).
+Include: cost delta (tokens_in, tokens_out, % change), warnings (prompt_hash match, suite mismatch, model settings differ).
+
+### Five Key Decisions (Record in SPEC.md, Defend Each)
+
+1. **Flaky Policy**: What pass_rate counts as pass? Threshold or strict unanimity?
+2. **Fenced JSON**: Is `\`\`\`json {...}\`\`\`` valid JSON? (json_valid and json_field_equals must be consistent)
+3. **Regression Threshold**: Is a 1.0 → 0.9 pass_rate drop a regression? Depends on --runs?
+4. **Assertion Eval Model**: Do all assertions evaluate, or stop at first failure?
+5. **Cost Accounting**: Averages per run or totals across runs?
+
+### Failure Taxonomy (One-Line Messages, Exit Codes)
+
+- Missing suite file → exit 4
+- Malformed suite (missing fields, wrong types, unknown assertion) → exit 1
+- Missing prompt file → exit 4
+- Invalid regex in matches → exit 1
+- Invalid JSON (unreadable, truncated mid-parse) → exit 1
+- Model binary absent → exit 3
+- Model subprocess error → exit 3
+- Case assertions all pass → exit 0
+- Any case fails → exit 2
+- Mix of pass/fail (when all cases should be deterministic) → review flaky policy
+
+### Available Commands and Skills
+
+**Slash Commands** (in Claude Code):
+- `/sp.specify` — Write feature spec
+- `/sp.clarify` — Resolve team decisions
+- `/sp.adr` — Document architectural decisions
+- `/sp.plan` — Generate implementation plan
+- `/sp.tasks` — Create testable task list
+- `/sp.analyze` — Check spec/plan/tasks consistency
+- `/sp.implement` — Implement a phase
+- `/sp.phr` — Record prompt history
+- `/sp.git.commit_pr` — Commit or create PR
+
+**Subagents** (use via Agent tool):
+- `spec-reviewer` — Verify code against SPEC.md
+- `test-writer` — Write unittest tests
+- `prompt-evaluator` — Compare prompt versions
+
+### SPEC.md is Ground Truth
+
+SPEC.md at the repo root is the graded specification. Every change updates SPEC.md before code. See git log for history: first commit is SPEC.md only, no code.
+
 ## Basic Project Structure
 
 - `.specify/memory/constitution.md` — Project principles
