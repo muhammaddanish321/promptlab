@@ -49,15 +49,37 @@ def main():
 def run_command(args):
     """Handler for 'run' command."""
     try:
+        from . import runner, report
+        import json
+
         # Load and validate suite
         suite_data = suite.load_suite(args.suite)
 
         # Determine number of runs
         runs = args.runs if args.runs is not None else suite_data.get("runs", 1)
 
-        # TODO: Implement actual suite execution (Phase 2)
-        print("Run command not yet implemented", file=sys.stderr)
-        return 1
+        # Execute suite
+        cases_results, start_time, end_time = runner.run_suite(suite_data, runs)
+
+        # Generate report
+        report_data = report.generate_report(suite_data, cases_results, runs, start_time, end_time)
+
+        # Output report
+        if args.out:
+            with open(args.out, 'w') as f:
+                json.dump(report_data, f, indent=2, sort_keys=True)
+        else:
+            print(json.dumps(report_data, indent=2, sort_keys=True))
+
+        # Print human summary if requested
+        if args.report:
+            report.print_human_summary(report_data, file=sys.stderr)
+
+        # Exit code: 0 = all pass, 2 = any failure
+        totals = report_data["totals"]
+        if totals["failed"] > 0 or totals["flaky"] > 0:
+            return 2
+        return 0
 
     except FileNotFoundError as e:
         print(f"suite: cannot read file", file=sys.stderr)
